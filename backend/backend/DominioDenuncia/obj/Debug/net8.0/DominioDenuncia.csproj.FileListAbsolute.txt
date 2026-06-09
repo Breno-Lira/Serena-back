@@ -1,0 +1,12 @@
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\backend\DominioDenuncia\bin\Debug\net8.0\DominioDenuncia.deps.json
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\backend\DominioDenuncia\bin\Debug\net8.0\DominioDenuncia.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\backend\DominioDenuncia\bin\Debug\net8.0\DominioDenuncia.pdb
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\backend\DominioDenuncia\obj\Debug\net8.0\DominioDenuncia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\backend\DominioDenuncia\obj\Debug\net8.0\DominioDenuncia.AssemblyInfoInputs.cache
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\backend\DominioDenuncia\obj\Debug\net8.0\DominioDenuncia.AssemblyInfo.cs
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\backend\DominioDenuncia\obj\Debug\net8.0\DominioDenuncia.csproj.CoreCompileInputs.cache
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\backend\DominioDenuncia\obj\Debug\net8.0\DominioDenuncia.sourcelink.json
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\backend\DominioDenuncia\obj\Debug\net8.0\DominioDenuncia.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\backend\DominioDenuncia\obj\Debug\net8.0\refint\DominioDenuncia.dll
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\backend\DominioDenuncia\obj\Debug\net8.0\DominioDenuncia.pdb
+C:\Users\gabriel.tabosa\source\repos\projeto5\backend\backend\DominioDenuncia\obj\Debug\net8.0\ref\DominioDenuncia.dll

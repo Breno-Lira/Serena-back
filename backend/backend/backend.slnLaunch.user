@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Novo Perfil",
+    "Projects": [
+      {
+        "Path": "..\\api-user\\api-user\\api-user.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "api-denuncia\\api-denuncia.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

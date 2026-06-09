@@ -1,0 +1,6 @@
+@api_denuncia_HostAddress = http://localhost:5226
+
+GET {{api_denuncia_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
