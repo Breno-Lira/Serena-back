@@ -10,17 +10,6 @@ var builder = WebApplication.CreateBuilder(args);
 // ---------------------------------------------------------------------------
 // Camada de apresentacao (API)
 // ---------------------------------------------------------------------------
-// ✅ Configuração do serviço de CORS (Adicionado para o Flutter Web)
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("PermitirFlutterWeb", policy =>
-    {
-        policy.AllowAnyOrigin()   // Permite requisições do Chrome do Flutter
-              .AllowAnyMethod()   // Permite POST, GET, etc.
-              .AllowAnyHeader();  // Permite cabeçalhos como Content-Type
-    });
-});
-
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -74,9 +63,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-// ✅ Ativação do middleware de CORS (Deve vir antes do UseAuthorization e MapControllers)
-app.UseCors("PermitirFlutterWeb");
 
 app.UseAuthorization();
 app.MapControllers();

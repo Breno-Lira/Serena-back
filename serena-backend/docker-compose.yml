@@ -47,5 +47,16 @@ services:
     ports:
       - "8080:8080"
 
+  # ------------------------------------------------------------------
+  # API de IA (FastAPI / Python) — predicao do tipo de violencia
+  # ------------------------------------------------------------------
+  api-ia:
+    build:
+      context: ./api-ia
+      dockerfile: Dockerfile
+    container_name: serena-api-ia
+    ports:
+      - "8000:8000"
+
 volumes:
   sqlserver-data:

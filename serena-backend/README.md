@@ -6,8 +6,9 @@ Backend enxuto com **duas** APIs independentes:
 |-----|-------|--------------|--------|
 | `api-user` | .NET 8 (C#) | `5000` | CRUD de usuários, login e redefinição de senha |
 | `api-dashboard` | Java 17 / Spring Boot | `8080` | Indicadores a partir de um CSV de dados de violência |
+| `api-ia` | Python 3.12 / FastAPI | `8000` | Predição do tipo de violência (Random Forest e XGBoost) |
 
-As APIs de **denúncia, login e IA** e o **gateway** foram removidas do projeto.
+As APIs de **denúncia, login** e o **gateway** foram removidas do projeto. A API de **IA** foi reintroduzida (`api-ia`), servindo os modelos treinados.
 
 ---
 
@@ -65,6 +66,7 @@ Depois de subir:
 
 - `api-user`  → http://localhost:5000/swagger
 - `api-dashboard` → http://localhost:8080/dashboard/total
+- `api-ia` → http://localhost:8000/docs
 
 O banco é criado automaticamente (as migrations rodam no startup). Os dados do SQL Server ficam num volume (`sqlserver-data`), então persistem entre reinícios.
 
@@ -124,6 +126,17 @@ mvn spring-boot:run
 | GET | `/dashboard/violencia-por-ano` | Tipos de violência por ano |
 | GET | `/dashboard/casos-por-idade` | Casos por faixa etária |
 | GET | `/dashboard/casos-por-hora` | Casos por hora do dia |
+
+### api-ia (`/ia`)
+
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| GET | `/ia/health` | Status e modelos carregados |
+| GET | `/ia/features` | Lista das 51 features e das classes |
+| POST | `/ia/prever` | Predição a partir das respostas do questionário |
+| POST | `/ia/prever-vetor` | Predição a partir de um vetor cru `{feature: 0/1}` |
+
+Modelos disponíveis: `rf` (Random Forest) e `xgb` (XGBoost, padrão). Detalhes e exemplos em `api-ia/README.md`.
 
 ---
 
