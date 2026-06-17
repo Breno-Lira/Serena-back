@@ -1,0 +1,51 @@
+services:
+  # ------------------------------------------------------------------
+  # Dependencia do api-user: banco SQL Server
+  # ------------------------------------------------------------------
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: serena-sqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "Your_strong_Pass123"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P \"$$MSSQL_SA_PASSWORD\" -C -Q 'SELECT 1' || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  # ------------------------------------------------------------------
+  # API de usuarios (.NET 8)
+  # ------------------------------------------------------------------
+  api-user:
+    build:
+      context: ./api-user
+      dockerfile: Dockerfile
+    container_name: serena-api-user
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ConnectionStrings__DefaultConnection: "Server=sqlserver,1433;Database=User-API;User Id=sa;Password=Your_strong_Pass123;TrustServerCertificate=True;MultipleActiveResultSets=true"
+    ports:
+      - "5000:8080"
+
+  # ------------------------------------------------------------------
+  # API de dashboard (Spring Boot)
+  # ------------------------------------------------------------------
+  api-dashboard:
+    build:
+      context: ./api-dashboard
+      dockerfile: Dockerfile
+    container_name: serena-api-dashboard
+    ports:
+      - "8080:8080"
+
+volumes:
+  sqlserver-data:

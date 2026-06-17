@@ -1,0 +1,18 @@
+# .NET
+**/bin/
+**/obj/
+**/.vs/
+
+# Java / Maven
+**/target/
+**/.settings/
+**/.classpath
+**/.project
+
+# IDE
+.idea/
+*.user
+.vscode/
+
+# OS
+.DS_Store
