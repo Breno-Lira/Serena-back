@@ -98,8 +98,8 @@ correspondente fica zerado. O campo `modelo` aceita `"rf"` (Random Forest) ou
 
 - **q1**: `com arma de fogo`, `com faca`, `de outra forma`, `não`, `sim`
 - **q2**: `afogamento`, `enforcamento`, `estrangulamento`, `facada`, `nenhuma agressão física`, `outro`, `paulada`, `queimadura`, `sufocamento`, `tiro`
-- **q21**: `chute`, `empurrão`, `nenhuma agressão física`, `puxão de cabelo`, `soco`, `tapa`
+- **q21**: `chute`, `empurrão`, `nenhuma agressão física`, `outro`, `puxão de cabelo`, `soco`, `tapa`
 - **q4**: `ameaca_nao_sera`, `ciume_controle`, `fez_telefonemas`, `impediu_acesso_dinheiro`, `nenhum_controle`, `perturbou_perseguiu`, `proibiu_trabalhar`, `proibiu_visitar`
-- **rel_afetiva**: `Companheiro(a)`, `Cunhado(a)`, `Ex-companheiro(a)`, `Ex-marido ou ex-esposo(a)`, `Ex-namorado(a)`, `Filho(a)`, `Irmão(ã)`, `Marido ou Esposo(a)`, `Namorado(a)`, `Padrasto`, `Pai`, `Primo(a)`
+- **rel_afetiva**: `Companheiro(a)`, `Cunhado(a)`, `Ex-companheiro(a)`, `Ex-marido ou ex-esposo(a)`, `Ex-namorado(a)`, `Filho(a)`, `Outro`, `Irmão(ã)`, `Marido ou Esposo(a)`, `Namorado(a)`, `Padrasto`, `Pai`, `Primo(a)`
 - **rel_domiciliar**: `Ex-residente do lar`, `Outro`, `Pessoa que reside no mesmo lar`, `Pessoa que reside no mesmo lar, Ex-residente do lar`
 - **flags booleanas**: `q3_sexual`, `q11_arma`, `q12_terceiros`, `q15_isolamento`, `q19_cohabita`, `q20_dependencia`
