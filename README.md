@@ -48,15 +48,17 @@ Você pode acessar o notebook do Google Colab com o pipeline completo de treinam
 
 O ecossistema é composto por três microsserviços que cooperam sob um modelo REST, orquestrados através de contêineres Docker:
 
+
+
 ```mermaid
 graph TD
-    Client[Cliente / Aplicação Web] -->|Porta 5000| UserAPI[api-user: .NET 8]
-    Client -->|Porta 8080| DashAPI[api-dashboard: Spring Boot]
-    Client -->|Porta 8000| IaAPI[api-ia: FastAPI]
+    Client["Cliente / Aplicação Web"] -->|Porta 5000| UserAPI["api-user: .NET 8"]
+    Client -->|Porta 8080| DashAPI["api-dashboard: Spring Boot"]
+    Client -->|Porta 8000| IaAPI["api-ia: FastAPI"]
     
-    UserAPI -->|Leitura / Escrita| SQL[SQL Server Database]
-    DashAPI -->|Analisa| CSV[dados.csv no Classpath]
-    IaAPI -->|Executa ML| Models[Modelos Pre-treinados RF & XGBoost]
+    UserAPI -->|Leitura / Escrita| SQL["SQL Server Database"]
+    DashAPI -->|Analisa| CSV["dados.csv no Classpath"]
+    IaAPI -->|Executa ML| Models["Modelos Pre-treinados RF & XGBoost"]
 ```
 
 - **api-user (`http://localhost:5000`)**: Gerencia a autenticação de usuários, criação de perfis e diretório de contatos de apoio. Utiliza o Entity Framework Core (EF Core) conectado ao Microsoft SQL Server.
